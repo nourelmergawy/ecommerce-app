@@ -16,7 +16,6 @@ import com.google.firebase.ktx.Firebase
 import com.mrg.ecommerceapp.databinding.ActivityMainBinding
 
 class  MainActivity : AppCompatActivity() {
-//    private  var task: Boolean = false
     private lateinit var binding: ActivityMainBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var etEmail: EditText
@@ -39,7 +38,7 @@ class  MainActivity : AppCompatActivity() {
             var email :String= etEmail.text.toString()
             var password : String = etpassword.text.toString()
             // Initialize Firebase Auth
-            auth.signInWithEmailAndPassword(email!! , password!!)
+            auth.signInWithEmailAndPassword(email!!, password!!)
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         // Sign in success, update UI with the signed-in user's information
@@ -54,6 +53,11 @@ class  MainActivity : AppCompatActivity() {
                         updateUI(null)
                     }
                 }
+
+        }
+        signUpBtn.setOnClickListener {
+            var intent: Intent = Intent(applicationContext,SignUP::class.java)
+            startActivity(intent)
         }
 
 
@@ -63,15 +67,15 @@ class  MainActivity : AppCompatActivity() {
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
         if(currentUser != null){
-            finish();
-            startActivity(getIntent())
+//            updateUI(currentUser)
         }
     }
 
 
     private fun updateUI(user: FirebaseUser?) {
         if (user != null){
-            var intent: Intent = Intent(applicationContext,SignUP::class.java)
+            var intent: Intent = Intent(applicationContext,Home::class.java)
+            intent.putExtra("user", user)
             startActivity(intent)
         }
     }
