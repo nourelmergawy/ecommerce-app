@@ -75,8 +75,10 @@ class  MainActivity : AppCompatActivity() {
     private fun updateUI(user: FirebaseUser?) {
         if (user != null){
             var intent: Intent = Intent(applicationContext,Home::class.java)
-            intent.putExtra("user", user)
+            intent.putExtra("user", user.toString())
             startActivity(intent)
+            Log.d(TAG, "i', here : ${user}")
+
         }
     }
 }

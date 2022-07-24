@@ -1,29 +1,28 @@
 package com.mrg.ecommerceapp
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.ContentValues.TAG
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.mrg.ecommerceapp.databinding.ActivityHomeBinding
+import com.mrg.ecommerceapp.databinding.ActivitySignUpBinding
 
 class Home : AppCompatActivity() {
+    private lateinit var binding: ActivityHomeBinding
+    private lateinit var viewPager2: ViewPager2
+    private lateinit var tabLayout : TabLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
-        val user = Firebase.auth.currentUser
-        user?.let {
-            // Name, email address, and profile photo Url
-            val name = user.displayName
-            val email = user.email
-            val photoUrl = user.photoUrl
-
-            // Check if user's email is verified
-            val emailVerified = user.isEmailVerified
-
-            // The user's ID, unique to the Firebase project. Do NOT use this value to
-            // authenticate with your backend server, if you have one. Use
-            // FirebaseUser.getToken() instead.
-            val uid = user.uid
-        }
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
     }
 }
