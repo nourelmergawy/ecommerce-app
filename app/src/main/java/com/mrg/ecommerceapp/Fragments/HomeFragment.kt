@@ -27,7 +27,6 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater)
         view = binding.root
-        textView = binding.textViewfr
 
         return view
     }
