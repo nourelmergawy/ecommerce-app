@@ -35,6 +35,12 @@ class  MainActivity : AppCompatActivity() {
         signinBtn = binding.signinBtn
         signUpBtn = binding.signupBtn
         auth = Firebase.auth
+        signUpBtn.setOnClickListener {
+            Log.d(TAG, "onCreate: i'm here")
+            var intent: Intent = Intent(applicationContext,SignUP::class.java)
+            startActivity(intent)
+        }
+
         signinBtn.setOnClickListener {
             var email :String= etEmail.text.toString()
             var password : String = etpassword.text.toString()
@@ -57,10 +63,6 @@ class  MainActivity : AppCompatActivity() {
                     }
 
             }
-            signUpBtn.setOnClickListener {
-                var intent: Intent = Intent(applicationContext,SignUP::class.java)
-                startActivity(intent)
-            }
         }
     }
     public override fun onStart() {
@@ -68,7 +70,7 @@ class  MainActivity : AppCompatActivity() {
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
         if(currentUser != null){
-            updateUI(currentUser)
+//            updateUI(currentUser)
         }
     }
 
@@ -77,7 +79,7 @@ class  MainActivity : AppCompatActivity() {
             var intent: Intent = Intent(applicationContext,Home::class.java)
             intent.putExtra("user", user.toString())
             startActivity(intent)
-            Log.d(TAG, "i', here : ${user}")
+//            Log.d(TAG, "i', here : ${user}")
 
         }
     }

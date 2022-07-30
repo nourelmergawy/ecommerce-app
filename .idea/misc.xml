@@ -3,11 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/mergo/AndroidStudioProjects/ecommerceapp/app/src/main/res/drawable/ic_loading_spinner.xml" value="0.2575" />
+        <entry key="..\:/Users/mergo/AndroidStudioProjects/ecommerceapp/app/src/main/res/drawable/loading_spinner.xml" value="0.123" />
         <entry key="..\:/Users/mergo/AndroidStudioProjects/ecommerceapp/app/src/main/res/layout/activity_home.xml" value="0.2578125" />
         <entry key="..\:/Users/mergo/AndroidStudioProjects/ecommerceapp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mergo/AndroidStudioProjects/ecommerceapp/app/src/main/res/layout/activity_sign_up.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mergo/AndroidStudioProjects/ecommerceapp/app/src/main/res/layout/fragment_cart.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/mergo/AndroidStudioProjects/ecommerceapp/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/mergo/AndroidStudioProjects/ecommerceapp/app/src/main/res/layout/fragment_product_page.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/mergo/AndroidStudioProjects/ecommerceapp/app/src/main/res/layout/fragment_user.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mergo/AndroidStudioProjects/ecommerceapp/app/src/main/res/layout/home_item.xml" value="0.253125" />
         <entry key="..\:/Users/mergo/AndroidStudioProjects/ecommerceapp/app/src/main/res/menu/toolbar_menu.xml" value="0.25416666666666665" />
       </map>

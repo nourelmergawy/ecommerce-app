@@ -104,7 +104,7 @@ class SignUP : AppCompatActivity() {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     Log.d(TAG, "User profile updated.")
-//                    updateUI(user)
+                    updateUI(user)
                 }
             }
 
