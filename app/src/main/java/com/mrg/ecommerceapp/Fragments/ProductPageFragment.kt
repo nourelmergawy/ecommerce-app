@@ -30,7 +30,7 @@ class ProductPageFragment(prod: Product) : Fragment() {
         productTitle = binding.titleItem
         productImg = binding.imgItem
 
-//        productImg.setImageURI(product.)
+//        productImg.setImageURI()
             return binding.root
 
     }

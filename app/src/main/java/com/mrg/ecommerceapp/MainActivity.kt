@@ -18,69 +18,13 @@ import com.mrg.ecommerceapp.databinding.ActivityMainBinding
 
 class  MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private lateinit var auth: FirebaseAuth
-    private lateinit var etEmail: EditText
-    private lateinit var etpassword :EditText
-    private lateinit var signinBtn :Button
-    private lateinit var signUpBtn :Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //binding views
-        etEmail = binding.emailItem
-        etpassword = binding.passwordItem
-        signinBtn = binding.signinBtn
-        signUpBtn = binding.signupBtn
-        auth = Firebase.auth
-        signUpBtn.setOnClickListener {
-            Log.d(TAG, "onCreate: i'm here")
-            var intent: Intent = Intent(applicationContext,SignUP::class.java)
-            startActivity(intent)
-        }
 
-        signinBtn.setOnClickListener {
-            var email :String= etEmail.text.toString()
-            var password : String = etpassword.text.toString()
-            if(email != null && password != null){
-                // Initialize Firebase Auth
-                auth.signInWithEmailAndPassword(email!!, password!!)
-                    .addOnCompleteListener(this) { task ->
-                        if (task.isSuccessful) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithEmail:success")
-                            val user = auth.currentUser
-                            updateUI(user)
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Log.w(TAG, "signInWithEmail:failure", task.exception)
-                            Toast.makeText(baseContext, "Authentication failed.",
-                                Toast.LENGTH_SHORT).show()
-                            updateUI(null)
-                        }
-                    }
-
-            }
-        }
-    }
-    public override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val currentUser = auth.currentUser
-        if(currentUser != null){
-//            updateUI(currentUser)
-        }
     }
 
-    private fun updateUI(user: FirebaseUser?) {
-        if (user != null){
-            var intent: Intent = Intent(applicationContext,Home::class.java)
-            intent.putExtra("user", user.toString())
-            startActivity(intent)
-//            Log.d(TAG, "i', here : ${user}")
-
-        }
-    }
 }
