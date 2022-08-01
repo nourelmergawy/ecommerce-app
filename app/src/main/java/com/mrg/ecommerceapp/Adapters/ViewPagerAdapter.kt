@@ -3,9 +3,9 @@ package com.mrg.ecommerceapp.Adapters
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.mrg.ecommerceapp.Fragments.CartFragment
-import com.mrg.ecommerceapp.Fragments.HomeFragment
-import com.mrg.ecommerceapp.Fragments.UserFragment
+import com.mrg.ecommerceapp.Fragments.HomeFragments.CartFragment
+import com.mrg.ecommerceapp.Fragments.HomeFragments.HomeFragment
+import com.mrg.ecommerceapp.Fragments.HomeFragments.UserFragment
 
 class ViewPagerAdapter(fragmentManager: FragmentManager ,var tabCount: Int) : FragmentPagerAdapter(fragmentManager) {
     override fun getCount(): Int {

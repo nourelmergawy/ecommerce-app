@@ -11,12 +11,12 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.mrg.ecommerceapp.Fragments.Product
+import com.mrg.ecommerceapp.Models.Product
 import com.mrg.ecommerceapp.Fragments.ProductPageFragment
 import com.mrg.ecommerceapp.R
 import com.mrg.ecommerceapp.databinding.HomeItemBinding
 
-class RecyclerAdapter(var myList:ArrayList<Product>,var context: Context) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+class RecyclerAdapter(var myList:ArrayList<Product>, var context: Context) : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     lateinit var itemBinding: HomeItemBinding
     class ViewHolder(binding : HomeItemBinding) : RecyclerView.ViewHolder(binding.root) {
          var titletv:TextView

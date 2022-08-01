@@ -1,4 +1,4 @@
-package com.mrg.ecommerceapp.Fragments
+package com.mrg.ecommerceapp.Models
 
 import android.net.Uri
 import com.google.gson.annotations.SerializedName

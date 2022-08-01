@@ -1,7 +1,6 @@
-package com.mrg.ecommerceapp.Fragments
+package com.mrg.ecommerceapp.Fragments.Authentication
 
 import android.content.ContentValues
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,15 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
-import com.mrg.ecommerceapp.Home
 import com.mrg.ecommerceapp.R
-import com.mrg.ecommerceapp.SignUP
 import com.mrg.ecommerceapp.ViewModel
 import com.mrg.ecommerceapp.databinding.FragmentSignInBinding
 
@@ -52,32 +44,24 @@ class SignInFragment : Fragment() {
 
         signUpBtn.setOnClickListener {
             Log.d(ContentValues.TAG, "onCreate: i'm here")
-            viewModel.fireBaseSignInAuth(etEmail.text.toString(),etpassword.text.toString(),
-                activity?.applicationContext!!
-            )
-
+            val transaction = activity?.supportFragmentManager?.beginTransaction()
+            transaction?.replace(R.id.fragmentContainerView, SignUpFragment())
+            transaction?.commit()
         }
 
         signinBtn.setOnClickListener {
             var email :String= etEmail.text.toString()
             var password : String = etpassword.text.toString()
+             var task :Boolean
             if(email != null && password != null){
 
+                viewModel.fireBaseSignInAuth(etEmail.text.toString(),etpassword.text.toString(),
+                    activity?.applicationContext!!,this)
 
-            }
-        }
+        }}
+
         return binding.root
     }
-    private fun updateUI(user: FirebaseUser?) {
-        if (user != null){
-//            var intent: Intent = Intent(applicationContext, Home::class.java)
-//            intent.putExtra("user", user.toString())
-//            startActivity(intent)
-//            Log.d(TAG, "i', here : ${user}")
-
-        }
-    }
-
 
     override fun onStart() {
         super.onStart()

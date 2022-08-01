@@ -1,4 +1,4 @@
-package com.mrg.ecommerceapp.Fragments
+package com.mrg.ecommerceapp.Fragments.HomeFragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,7 @@ import com.mrg.ecommerceapp.R
 import com.mrg.ecommerceapp.databinding.FragmentCartBinding
 
 class CartFragment : Fragment() {
-    lateinit var binding :FragmentCartBinding
+    lateinit var binding : FragmentCartBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.constraintlayout.motion.widget.OnSwipe
-import com.mrg.ecommerceapp.R
+import com.mrg.ecommerceapp.Models.Product
 import com.mrg.ecommerceapp.databinding.FragmentProductPageBinding
 
 class ProductPageFragment(prod: Product) : Fragment() {
@@ -32,6 +31,5 @@ class ProductPageFragment(prod: Product) : Fragment() {
 
 //        productImg.setImageURI()
             return binding.root
-
     }
 }
